@@ -8,7 +8,7 @@ function createGrid (){
         alert('La partita é gia stata avviata');
     }
     else{
-        for (let index = 0; index < 17; index++) {
+        for (let index = 0; index < 64; index++) {
             console.log('Cell' + index);
             let createCell = document.createElement("div");
             grid.appendChild(createCell);

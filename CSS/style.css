@@ -7,7 +7,12 @@
 body{
     background-color: aqua;
 }
+section{
+    margin: 0 auto;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+}
 div{
     border: 1px solid red;
-    padding: 10rem;
+    padding: 40px;
 }
