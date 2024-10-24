@@ -8,10 +8,15 @@ function createGrid (){
         alert('La partita é gia stata avviata');
     }
     else{
-        for (let index = 0; index < 64; index++) {
+        for (let index = 0; index < 32; index++) {
             console.log('Cell' + index);
             let createCell = document.createElement("div");
             grid.appendChild(createCell);
         };
-    }
+        for (let index = 0; index < 32; index++) {
+            console.log('Cell' + index);
+            let createCell = document.createElement("div");
+            grid.appendChild(createCell);
+        };
+    };
 };
