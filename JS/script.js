@@ -1,9 +1,9 @@
 /*Creating a grid 8x8 */
     const blackPieces = [
-    'Rook-B', 'Knight-B', 'Bishop-B', 'Queen-B', 'King-B', 'Bishop-B', 'Knight-B', 'Rook-B','Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B'              
+        'Rook-B', 'Knight-B', 'Bishop-B', 'Queen-B', 'King-B', 'Bishop-B', 'Knight-B', 'Rook-B','Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B', 'Pawn-B'              
     ];
     const whitePieces = [
-    'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W','Rook-W', 'Knight-W', 'Bishop-W', 'Queen-W', 'King-W', 'Bishop-W', 'Knight-W', 'Rook-W'     
+        'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W', 'Pawn-W','Rook-W', 'Knight-W', 'Bishop-W', 'Queen-W', 'King-W', 'Bishop-W', 'Knight-W', 'Rook-W'     
     ];
 
 const start = document.getElementById("start").addEventListener("click", createGrid);
@@ -18,6 +18,30 @@ function createGrid (){
             console.log('Cell' + index);
             let createCell = document.createElement("div");
             grid.appendChild(createCell);
+            if(index < 8 && index % 2 === 0){
+                createCell.classList.add("green")
+            }
+            else if(index < 8 && index % 2 !== 0){
+                createCell.classList.add("brown")
+            }
+            else if(index < 16 && (index + 1) % 2 === 0){
+                createCell.classList.add("green")
+            }
+            else if(index < 16 && (index + 1) % 2 !== 0){
+                createCell.classList.add("brown")
+            }
+            else if(index < 24 && index % 2 === 0){
+                createCell.classList.add("green")
+            }
+            else if(index < 24 && index % 2 !== 0){
+                createCell.classList.add("brown")
+            }
+            else if(index < 32 && (index + 1) % 2 === 0){
+                createCell.classList.add("green")
+            }
+            else if(index < 32 && (index + 1) % 2 !== 0){
+                createCell.classList.add("brown")
+            };
             if(index < 16){
                 let img = document.createElement("img");
                 img.src = "img/" + blackPieces[index] + ".png";
@@ -29,6 +53,30 @@ function createGrid (){
             console.log('Cell' + index);
             let createCell = document.createElement("div");
             grid.appendChild(createCell);
+            if(index < 8 && index % 2 === 0){
+                createCell.classList.add("green")
+            }
+            else if(index < 8 && index % 2 !== 0){
+                createCell.classList.add("brown")
+            }
+            else if(index < 16 && (index + 1) % 2 === 0){
+                createCell.classList.add("green")
+            }
+            else if(index < 16 && (index + 1) % 2 !== 0){
+                createCell.classList.add("brown")
+            }
+            else if(index < 24 && index % 2 === 0){
+                createCell.classList.add("green")
+            }
+            else if(index < 24 && index % 2 !== 0){
+                createCell.classList.add("brown")
+            }
+            else if(index < 32 && (index + 1) % 2 === 0){
+                createCell.classList.add("green")
+            }
+            else if(index < 32 && (index + 1) % 2 !== 0){
+                createCell.classList.add("brown")
+            };
             if(index > 15){
                 let img = document.createElement("img");
                 img.src = "img/" + whitePieces[index - 16] + ".png";
