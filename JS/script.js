@@ -8,6 +8,7 @@
 
 const start = document.getElementById("start").addEventListener("click", createGrid);
 const grid = document.getElementsByTagName("section")[0];
+let draggedElement = null;
 
 function createGrid (){
     if(grid.hasChildNodes()){
@@ -18,6 +19,10 @@ function createGrid (){
             console.log('Cell' + index);
             let createCell = document.createElement("div");
             grid.appendChild(createCell);
+            createCell.addEventListener("dragover", dragOver);
+            createCell.addEventListener("dragenter", dragEnter);
+            createCell.addEventListener("dragleave", dragLeave);
+            createCell.addEventListener("drop", dragDrop);
             if(index < 8 && index % 2 === 0){
                 createCell.classList.add("green")
             }
@@ -46,13 +51,55 @@ function createGrid (){
                 let img = document.createElement("img");
                 img.src = "img/" + blackPieces[index] + ".png";
                 img.alt = blackPieces[index];
+                img.draggable = true;
                 createCell.appendChild(img);
+                // createCell.addEventListener("drag", dragging)
+                createCell.addEventListener("dragstart", dragStart)
+                createCell.addEventListener("dragend", dragEnd);
+            };
+            if(index > 16){
+                let img = document.createElement("img");
+                img.src = " ";
+                img.alt = " ";
+                img.draggable = true;
+                createCell.appendChild(img);
+                // createCell.addEventListener("drag", dragging)
+                createCell.addEventListener("dragstart", dragStart)
+                createCell.addEventListener("dragend", dragEnd);
             };
         };
+        function dragStart(event) {
+            draggedElement = event.target;
+        };
+        // function dragging(event) {
+        //     console.log(event)
+        // };
+        function dragOver(event) {
+            event.preventDefault();
+        };   
+        function dragDrop(event) {
+            event.preventDefault();
+            event.target.appendChild(draggedElement);
+            draggedElement = null;
+        };
+        function dragEnter(event) {
+            console.log(event)
+        };
+        function dragLeave(event) {
+            console.log(event)
+        }; 
+        function dragEnd(event) {
+            console.log(event)
+            draggedElement = null;
+        };     
         for (let index = 0; index < 32; index++) {
             console.log('Cell' + index);
             let createCell = document.createElement("div");
             grid.appendChild(createCell);
+            createCell.addEventListener("dragover", dragOver);
+            createCell.addEventListener("dragenter", dragEnter);
+            createCell.addEventListener("dragleave", dragLeave);
+            createCell.addEventListener("drop", dragDrop);
             if(index < 8 && index % 2 === 0){
                 createCell.classList.add("green")
             }
@@ -82,6 +129,19 @@ function createGrid (){
                 img.src = "img/" + whitePieces[index - 16] + ".png";
                 img.alt = whitePieces[index - 16];
                 createCell.appendChild(img);
+                // createCell.addEventListener("drag", dragging)
+                createCell.addEventListener("dragstart", dragStart)
+                createCell.addEventListener("dragend", dragEnd);
+            };
+            if(index > 16){
+                let img = document.createElement("img");
+                img.src = " ";
+                img.alt = " ";
+                img.draggable = true;
+                createCell.appendChild(img);
+                // createCell.addEventListener("drag", dragging)
+                createCell.addEventListener("dragstart", dragStart)
+                createCell.addEventListener("dragend", dragEnd);
             };
         };
     };
