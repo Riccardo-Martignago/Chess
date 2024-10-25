@@ -133,7 +133,7 @@ function createGrid (){
                 createCell.addEventListener("dragstart", dragStart)
                 createCell.addEventListener("dragend", dragEnd);
             };
-            if(index > 16){
+            if(index < 16){
                 let img = document.createElement("img");
                 img.src = " ";
                 img.alt = " ";
