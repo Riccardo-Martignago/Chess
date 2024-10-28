@@ -57,16 +57,6 @@ function createGrid (){
                 createCell.addEventListener("dragstart", dragStart)
                 createCell.addEventListener("dragend", dragEnd);
             };
-            if(index > 16){
-                let img = document.createElement("img");
-                img.src = " ";
-                img.alt = " ";
-                img.draggable = true;
-                createCell.appendChild(img);
-                // createCell.addEventListener("drag", dragging)
-                createCell.addEventListener("dragstart", dragStart)
-                createCell.addEventListener("dragend", dragEnd);
-            };
         };
         function dragStart(event) {
             draggedElement = event.target;
@@ -86,10 +76,10 @@ function createGrid (){
             }
         };
         function dragEnter(event) {
-            console.log(event)
+            event.preventDefault();
         };
         function dragLeave(event) {
-            console.log(event)
+            event.preventDefault();
         }; 
         function dragEnd(event) {
             console.log(event)
@@ -131,16 +121,6 @@ function createGrid (){
                 let img = document.createElement("img");
                 img.src = "img/" + whitePieces[index - 16] + ".png";
                 img.alt = whitePieces[index - 16];
-                createCell.appendChild(img);
-                // createCell.addEventListener("drag", dragging)
-                createCell.addEventListener("dragstart", dragStart)
-                createCell.addEventListener("dragend", dragEnd);
-            };
-            if(index < 16){
-                let img = document.createElement("img");
-                img.src = " ";
-                img.alt = " ";
-                img.draggable = true;
                 createCell.appendChild(img);
                 // createCell.addEventListener("drag", dragging)
                 createCell.addEventListener("dragstart", dragStart)
