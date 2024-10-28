@@ -79,8 +79,11 @@ function createGrid (){
         };   
         function dragDrop(event) {
             event.preventDefault();
-            event.target.appendChild(draggedElement);
-            draggedElement = null;
+            if (event.target.tagName === "IMG") {
+                event.target.parentNode.replaceChild(draggedElement, event.target);
+            } else {
+                event.target.appendChild(draggedElement);
+            }
         };
         function dragEnter(event) {
             console.log(event)
