@@ -57,6 +57,16 @@ function createGrid (){
                 createCell.addEventListener("dragstart", dragStart)
                 createCell.addEventListener("dragend", dragEnd);
             };
+            if(index > 16){
+                let img = document.createElement("img");
+                img.src = "img/empty_image.png";
+                img.alt = " ";
+                img.draggable = true;
+                createCell.appendChild(img);
+                // createCell.addEventListener("drag", dragging)
+                createCell.addEventListener("dragstart", dragStart)
+                createCell.addEventListener("dragend", dragEnd);
+            };
         };
         function dragStart(event) {
             draggedElement = event.target;
@@ -73,13 +83,13 @@ function createGrid (){
                 event.target.parentNode.replaceChild(draggedElement, event.target);
             } else {
                 event.target.appendChild(draggedElement);
-            }
+            };
         };
         function dragEnter(event) {
-            event.preventDefault();
+            console.log(event)
         };
         function dragLeave(event) {
-            event.preventDefault();
+            console.log(event)
         }; 
         function dragEnd(event) {
             console.log(event)
@@ -121,6 +131,16 @@ function createGrid (){
                 let img = document.createElement("img");
                 img.src = "img/" + whitePieces[index - 16] + ".png";
                 img.alt = whitePieces[index - 16];
+                createCell.appendChild(img);
+                // createCell.addEventListener("drag", dragging)
+                createCell.addEventListener("dragstart", dragStart)
+                createCell.addEventListener("dragend", dragEnd);
+            };
+            if(index < 16){
+                let img = document.createElement("img");
+                img.src = "img/empty_image.png";
+                img.alt = " ";
+                img.draggable = true;
                 createCell.appendChild(img);
                 // createCell.addEventListener("drag", dragging)
                 createCell.addEventListener("dragstart", dragStart)
