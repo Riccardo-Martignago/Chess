@@ -61,10 +61,9 @@ function createGrid (){
                 let img = document.createElement("img");
                 img.src = "img/empty_image.png";
                 img.alt = " ";
-                img.draggable = true;
                 createCell.appendChild(img);
                 // createCell.addEventListener("drag", dragging)
-                createCell.addEventListener("dragstart", dragStart)
+                createCell.addEventListener("dragstart", dragStart);
                 createCell.addEventListener("dragend", dragEnd);
             };
         };
@@ -133,17 +132,16 @@ function createGrid (){
                 img.alt = whitePieces[index - 16];
                 createCell.appendChild(img);
                 // createCell.addEventListener("drag", dragging)
-                createCell.addEventListener("dragstart", dragStart)
+                createCell.addEventListener("dragstart", dragStart);
                 createCell.addEventListener("dragend", dragEnd);
             };
             if(index < 16){
                 let img = document.createElement("img");
                 img.src = "img/empty_image.png";
                 img.alt = " ";
-                img.draggable = true;
                 createCell.appendChild(img);
                 // createCell.addEventListener("drag", dragging)
-                createCell.addEventListener("dragstart", dragStart)
+                createCell.addEventListener("dragstart", dragStart);
                 createCell.addEventListener("dragend", dragEnd);
             };
         };
